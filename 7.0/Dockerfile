@@ -24,4 +24,4 @@ VOLUME ["/data"]
 
 EXPOSE 9000
 
-ENTRYPOINT ["/usr/sbin/php7.0-fpm", "-F"]
+ENTRYPOINT ["/usr/sbin/php-fpm7.0", "-F"]
