@@ -19,6 +19,10 @@ RUN sed -i "s/;date.timezone =.*/date.timezone = UTC/" /etc/php5/fpm/php.ini && 
 
 RUN echo "xdebug.max_nesting_level = 1024" >> /etc/php5/mods-available/xdebug.ini
 
+RUN echo "extension=mongodb.so" > /etc/php5/fpm/conf.d/20-mongodb.ini && \
+    echo "extension=mongodb.so" > /etc/php5/cli/conf.d/20-mongodb.ini && \
+    echo "extension=mongodb.so" > /etc/php5/mods-available/mongodb.ini
+
 RUN mkdir -p /data
 VOLUME ["/data"]
 
